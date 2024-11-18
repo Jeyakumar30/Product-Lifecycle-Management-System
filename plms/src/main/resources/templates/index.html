@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dashboard</title>
+    <!-- Load Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<h1>System Dashboard</h1>
+
+<div>
+    <!-- Canvas element for the chart -->
+    <canvas id="productStageChart"></canvas>
+</div>
+
+<script>
+    // Fetch the data from the model attribute as a JSON object
+    var productCountByStage = [[${productCountByStage}]];
+
+    // If the data is in a proper format, you can use it directly
+    var labels = Object.keys(productCountByStage);
+    var data = Object.values(productCountByStage);
+
+    var ctx = document.getElementById('productStageChart').getContext('2d');
+    var productStageChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Products by Lifecycle Stage',
+                data: data,
+                backgroundColor: ['#ff6384', '#36a2eb', '#ffcd56', '#4bc0c0', '#9966ff'],
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(tooltipItem) {
+                            return tooltipItem.label + ": " + tooltipItem.raw + " products";
+                        }
+                    }
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Create Product</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<h1>Create New Product</h1>
+<form th:action="@{/products/create}" method="post">
+    <label for="name">Product Name:</label>
+    <input type="text" id="name" name="name" required>
+    <br>
+
+    <label for="description">Product Description:</label>
+    <textarea id="description" name="description" required></textarea>
+    <br>
+
+    <!-- Add Lifecycle Stage Selection -->
+    <label for="lifecycleStage">Lifecycle Stage:</label>
+    <select id="lifecycleStage" name="lifecycleStage.id" required>
+        <option th:each="stage : ${stages}"
+                th:value="${stage.id}"
+                th:text="${stage.name}"></option>
+    </select>
+    <br>
+
+    <button type="submit">Create Product</button>
+</form>
+<a href="/products">Back to Product List</a>
+</body>
+</html>

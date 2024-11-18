@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Lifecycle Stage</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+
+</head>
+<body>
+<h1>Edit Lifecycle Stage</h1>
+<form th:action="@{/lifecycle-stages/{id}(id=${lifecycleStage.id})}" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" th:value="${lifecycleStage.name}" required>
+    <br>
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" th:text="${lifecycleStage.description}"></textarea>
+    <br>
+    <button type="submit">Update Stage</button>
+</form>
+<a href="/lifecycle-stages">Back to Stages</a>
+</body>
+</html>

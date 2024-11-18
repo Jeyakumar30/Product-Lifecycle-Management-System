@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLMS Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container text-center my-5">
+    <h1>Welcome to Product Lifecycle Management System</h1>
+    <p class="lead">Choose your role to continue:</p>
+
+    <div class="row justify-content-center mt-5">
+        <!-- Admin Login -->
+        <div class="col-md-4">
+            <a href="/login_page" class="btn btn-primary btn-lg w-100">Admin Login</a>
+            <p class="mt-2">For managing products, lifecycle, reports.</p>
+        </div>
+        <!-- User Access -->
+        <div class="col-md-4">
+            <a href="/user_dashboard" class="btn btn-success btn-lg w-100">User Dashboard</a>
+            <p class="mt-2">To view reports and data insights.</p>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

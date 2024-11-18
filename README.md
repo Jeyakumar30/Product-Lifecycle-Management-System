@@ -17,5 +17,5 @@ A basic system for managing the stages of a product’s lifecycle, from concept 
     - JavaScript
     - Bootstrap
     
-3. Build & Deployment:
+3. Build System:
     - Maven

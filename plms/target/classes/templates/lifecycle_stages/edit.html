@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Lifecycle Stage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa; /* Light background */
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+            color: #343a40; /* Dark gray for header */
+            margin-bottom: 20px;
+        }
+        form {
+            background-color: #ffffff; /* White background for form */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+        .form-label {
+            font-weight: bold;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #0056b3;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .btn-secondary {
+            background-color: #6c757d;
+            border-color: #545b62;
+        }
+        .btn-secondary:hover {
+            background-color: #545b62;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Edit Lifecycle Stage</h1>
+    <form th:action="@{/lifecycle-stages/{id}(id=${lifecycleStage.id})}" method="post">
+        <div class="mb-3">
+            <label for="name" class="form-label">Name:</label>
+            <input type="text" id="name" name="name" class="form-control" th:value="${lifecycleStage.name}" required>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description:</label>
+            <textarea id="description" name="description" class="form-control" th:text="${lifecycleStage.description}" rows="4"></textarea>
+        </div>
+        <div class="d-flex justify-content-between">
+            <a href="/lifecycle-stages" class="btn btn-secondary">Back to Stages</a>
+            <button type="submit" class="btn btn-primary">Update Stage</button>
+        </div>
+    </form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

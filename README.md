@@ -5,17 +5,17 @@ A basic system for managing the stages of a product’s lifecycle, from concept 
 ## Tech Stack Used
 
 1. Backend:
-  - Spring Boot
-  - Spring Security
-  - Spring Data JPA
-  - Thymeleaf
-  - PostgreSQL
+    - Spring Boot
+    - Spring Security
+    - Spring Data JPA
+    - Thymeleaf
+    - PostgreSQL
     
 2. Frontend:
-  - HTML
-  - CSS
-  - JavaScript
-  - Bootstrap
+    - HTML
+    - CSS
+    - JavaScript
+    - Bootstrap
     
 3. Build & Deployment:
-  - Maven
+    - Maven
